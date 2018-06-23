@@ -10,12 +10,12 @@ use pocketmine\event\entity\EntityEffectRemoveEvent;
 
 class Main extends PluginBase implements Listener {
 
-  public function onEnable() {
-	$this->getServer()->getPluginManager()->registerEvents($this, $this);
+  public function onEnable(){
+    $this->getServer()->getPluginManager()->registerEvents($this, $this);
   }
 
   public function onEffectRemove(EntityEffectRemoveEvent $event){
-  	if($event->getEntity() instanceof Player && ! $event->getEntity()->isAlive()){
+  	if($event->getEntity() instanceof Player && !$event->getEntity()->isAlive()){
   		$event->setCancelled();
   	}
   }
